@@ -1,0 +1,50 @@
+[
+  {
+    "question": "How much data does Nimbus store for its customers?",
+    "expected_source_substring": "4 petabytes of data"
+  },
+  {
+    "question": "How much storage does the Professional plan include?",
+    "expected_source_substring": "1 TB of storage"
+  },
+  {
+    "question": "What encryption algorithm does Nimbus use to protect data at rest?",
+    "expected_source_substring": "AES-256 encryption"
+  },
+  {
+    "question": "What is the API rate limit for Professional plan accounts?",
+    "expected_source_substring": "1,000 requests per minute"
+  },
+  {
+    "question": "How many days of previous object versions does Nimbus retain by default?",
+    "expected_source_substring": "30 days of prior versions"
+  },
+  {
+    "question": "What is the guaranteed first response time for critical severity incidents on the Enterprise plan?",
+    "expected_source_substring": "30 minutes for critical severity incidents"
+  },
+  {
+    "question": "What trial do new Nimbus signups receive automatically?",
+    "expected_source_substring": "14-day trial of the Professional plan"
+  },
+  {
+    "question": "What certification does Nimbus hold for its information security management system?",
+    "expected_source_substring": "ISO 27001 certification"
+  },
+  {
+    "question": "How long does cross-region replication typically take to complete under normal conditions?",
+    "expected_source_substring": "within 60 seconds under normal conditions"
+  },
+  {
+    "question": "What is Nimbus's official command-line tool distributed as?",
+    "expected_source_substring": "single static binary for macOS, Linux, and Windows"
+  },
+  {
+    "question": "What algorithm does Nimbus use to sign webhook delivery requests?",
+    "expected_source_substring": "HMAC-SHA256"
+  },
+  {
+    "question": "How much does the Nimbus Vision add-on cost per processed file?",
+    "expected_source_substring": "$0.01 per processed file"
+  }
+]

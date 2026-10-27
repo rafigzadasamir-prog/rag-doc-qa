@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Speeds up repeated runs and reduces flakiness from relying on the Hugging Face Hub
+      # being reachable every single run; the embedding model is only ~90MB.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: ${{ runner.os }}-hf-all-MiniLM-L6-v2
+
+      - name: Install runtime dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install the package itself (editable) plus dev tooling
+        run: pip install -e . && pip install ruff pytest httpx
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Test
+        # No ANTHROPIC_API_KEY is set anywhere in this workflow - the suite must pass entirely
+        # on the deterministic offline/extractive path, with the Anthropic branch covered by
+        # mocks only.
+        run: pytest -q
